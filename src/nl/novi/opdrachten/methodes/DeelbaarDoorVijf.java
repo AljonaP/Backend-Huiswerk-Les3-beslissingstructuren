@@ -1,6 +1,6 @@
 package nl.novi.opdrachten.methodes;
 
-/**
+/** DONE
  * Schrijf een methode die een Integer ontvangt.
  * Wanneer het getal deelbaar is door 5, laat hem de volgende tekst returnen:
  * 'deelbaar door vijf'

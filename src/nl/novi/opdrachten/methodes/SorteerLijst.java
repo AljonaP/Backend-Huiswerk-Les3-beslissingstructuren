@@ -8,7 +8,7 @@ import java.util.Collections;
 
 
 
-/**
+/** DONE
  * Schrijf een methode  die een List<Integer> ontvangt.
  *
  * Check in de methode of deze list 3 entries heeft.
@@ -56,13 +56,12 @@ public class SorteerLijst {
                 Collections.swap(numbers, 0, 1);
             }
         }
-        StringBuilder stringBuilder = new StringBuilder();
+
+        StringBuilder stringBuilder = new StringBuilder(); // we gebruiken een StringBuilder, omdat het opracht is "return een string" (reg.38: public status String sortList)
         for (Integer i : numbers) {
             stringBuilder.append(i).append(" ");
         }
         return stringBuilder.toString();
-
-
     }
 
 }
