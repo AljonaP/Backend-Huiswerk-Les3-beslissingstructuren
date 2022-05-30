@@ -11,7 +11,6 @@ public class Staatslot {
         if (gegevenLeeftijd > 17) {
             System.out.println("U mag een staatslot kopen");
         } else {
-
             System.out.println("Jij mag geen staatslot kopen.");
         }
 //        int gegevenLeeftijd = gebruikersInput.nextInt();
