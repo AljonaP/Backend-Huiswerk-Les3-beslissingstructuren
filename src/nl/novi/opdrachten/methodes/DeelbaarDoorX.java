@@ -1,15 +1,15 @@
 package nl.novi.opdrachten.methodes;
 
 /**
- * Schrijf een methode die twee Integers ontvangt.
- * De eerste parameter heet 'number', de tweede 'divisible'
+ * [x] Schrijf een methode die twee Integers ontvangt. //reg.34 isDivicible
+ * [x ]De eerste parameter heet 'number', de tweede 'divisible' // reg.34
  *
- * Het is de bedoeling dat je checkt of 'number' deelbaar is door 'divisible'
+ * [x] Het is de bedoeling dat je checkt of 'number' deelbaar is door 'divisible' //reg.35
  *
- * Wanneer het deelbaar is, return het volgende:
- * Het getal: %HIER GETAL% is deelbaar door %HIER DIVISIBLE%.
+ * [x] Wanneer het deelbaar is, return het volgende:
+ * Het getal: %HIER GETAL% is deelbaar door %HIER DIVISIBLE%. //reg.36
  * Wanneer het niet deelbaar is:
- * Het getal: %HIER GETAL% is niet deelbaar door %HIER DIVISIBLE%. Verlaag of verhoog het getal
+ * [x] Het getal: %HIER GETAL% is niet deelbaar door %HIER DIVISIBLE%. Verlaag of verhoog het getal // reg.39 t/m 49
  * %HET GETAL WAARMEE HET VERHOOGT OF VERLAAGD MOET WORDEN%
  *
  * VOORBEELD:
@@ -24,4 +24,29 @@ package nl.novi.opdrachten.methodes;
  */
 
 public class DeelbaarDoorX {
+    public static void main(String[] args) {
+        System.out.println(isDivisible(13, 3));
+        System.out.println(isDivisible(15, 5));
+        System.out.println(isDivisible(13, 3));
+        System.out.println(isDivisible(14, 3));
+        System.out.println(isDivisible(14, 4));
+    }
+        private static String isDivisible(int number, int divisible){ //schrijf een methode die twee Integers ontvangt. De eerste parameter heet 'number', de tweede 'divisible'
+            if(number % divisible == 0){
+                return number + " is deelbaar door " + divisible; //Het is de bedoeling dat je checkt of 'number' deelbaar is door 'divisible'
+            }
+
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append("Het getal ").append(number).append(" is niet deeelbaar door ").append(divisible).append(".\r\n"); // \r\n from Java 7 is gelijk aan System.lineSeparator() en maakt eek nieuwe lijn.
+
+            int restNumber = number % divisible;
+            double deling = (double)restNumber/divisible;
+
+            if(deling<0.50){
+                stringBuilder.append("Verlag het getal met ").append(restNumber);
+            } else {
+                stringBuilder.append("Verhoog het getal met ").append(divisible-restNumber);
+            }
+            return stringBuilder.toString();
+        }
 }
