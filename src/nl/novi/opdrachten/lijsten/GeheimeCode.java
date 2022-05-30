@@ -15,10 +15,15 @@ public class GeheimeCode {
         laResistanceMembers = addMembers(laResistanceMembers, "Piet");
         laResistanceMembers = addMembers(laResistanceMembers, "LeDroitCestMoi");
 
-        /*
-        Opdracht 1: Hierboven zijn via de methode addMembers, leden aan de lijst toegevoegd. Pas de Methode zo aan dat
+
+
+
+        /* DONE Opdracht 1: Hierboven zijn via de methode addMembers, leden aan de lijst toegevoegd. Pas de Methode zo aan dat
          er alleen unieke namen in voor mogen komen.
          */
+        System.out.println("List with Resistance Members: " + laResistanceMembers);
+        laResistanceMembers = addMembers(laResistanceMembers, "piet");
+        System.out.println("List with Resistance Members: " + laResistanceMembers); // de naam "piet" wordt niet toegevoegd omdat "Piet" bestaat al (reg.15)
 
         /*
         Opdracht 2: La Resistance wil niet dat de lijst met namen zo in handen komt te vallen van de bezetter. Versleutel
@@ -36,8 +41,24 @@ public class GeheimeCode {
          */
     }
 
+
+    // DONE Opdracht 1 (changed methode addMembers)
     private static List<String> addMembers(List<String> members, String name) {
-        members.add(name);
+        boolean isUnique = true;
+        for(String member : members){
+            if(name.equalsIgnoreCase(member)){
+                isUnique = false;
+                break;
+            }
+        }
+        if(isUnique) {
+            members.add(name);
+        }
         return members;
     }
+
+    // Opdracht 2 (versleutende methode)
+//    private static String encriptName (String name) {
+//
+//    }
 }

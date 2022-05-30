@@ -1,5 +1,6 @@
 package nl.novi.opdrachten.beslissingsstructuren;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Korting {
@@ -8,6 +9,27 @@ public class Korting {
 
         System.out.println("Wat is het aankoopbedrag?");
         double aankoopBedrag = userInputScanner.nextDouble();
+        int discount1 = 16;
+        int discount2 = 10;
+        DecimalFormat df = new DecimalFormat("0.00");
+
+//        double roundOffAmountWithDiscount1 = (double)Math.round((aankoopBedrag/100.0)*(100.0-discount1));
+        double roundOffAmountWithDiscount1 = (double)Math.round((aankoopBedrag/100.0)*(100.0-discount1));
+        double roundOffAmountWithDiscount2 = (double)Math.round((aankoopBedrag/100.0)*(100.0-discount2));
+//        System.out.println(roundOffAmountWithDiscount1);
+//        System.out.println(roundOffAmountWithDiscount2);
+//        System.out.printf("%.2f%n", roundOffAmountWithDiscount1);
+        System.out.println(df.format(roundOffAmountWithDiscount1));
+
+        if (aankoopBedrag >= 300.00 ) {
+            System.out.println("De klant krijgt " + discount1 + "% korting. Het aankoopbedrag is nu " + Math.round(roundOffAmountWithDiscount1) + "€");
+        } else if (aankoopBedrag >= 75.00) {
+            System.out.println("De klant krijgt " + discount2 + "% korting. Het aankoopbedrag is nu:" + roundOffAmountWithDiscount2 + "€");
+        } else {
+            System.out.println("De klant krijgt geen korting. Het aankoopbedrag blijft " + aankoopBedrag + "€");
+        }
+
+
 
         /*
         Hierboven is het aankoopbedrag ingevoerd. Het is de bedoeling dat jij de korting bepaalt en het nieuwe bedrag

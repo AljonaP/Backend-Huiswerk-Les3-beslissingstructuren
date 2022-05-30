@@ -5,9 +5,15 @@ import java.util.Scanner;
 public class Staatslot {
     public static void main(String[] args) {
         Scanner gebruikersInput = new Scanner(System.in);
+        System.out.println("Voer in jouw leeftijd");
 
-        System.out.println("Wat is uw leeftijd?");
         int gegevenLeeftijd = gebruikersInput.nextInt();
+        if (gegevenLeeftijd > 17) {
+            System.out.println("U mag een staatslot kopen");
+        } else {
+            System.out.println("Jij mag geen staatslot kopen.");
+        }
+//        int gegevenLeeftijd = gebruikersInput.nextInt();
 
         // Maak hieronder een beslissingsstructuur (if/else).
         // Wanneer iemand ouder is dan 17 print het bericht: "U mag een staatslot kopen"
