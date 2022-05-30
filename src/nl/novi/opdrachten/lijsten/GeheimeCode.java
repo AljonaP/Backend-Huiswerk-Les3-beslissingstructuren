@@ -58,7 +58,7 @@ public class GeheimeCode {
     }
 
     // Opdracht 2 (versleutende methode)
-    private static String encriptName (String name) {
-
-    }
+//    private static String encriptName (String name) {
+//
+//    }
 }

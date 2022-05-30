@@ -10,6 +10,14 @@ package nl.novi.opdrachten.methodes;
 public class DeelbaarDoorVijf {
 
     public static void main(String[] sammieKijkOmhoog) {
+
         int chosenNumber = 44;
+        if(chosenNumber % 5 == 0){
+            System.out.println(chosenNumber + " is deelbaar door vijf ");
+        } else {
+            System.out.println(chosenNumber + " is ondeelbaar door vijf");
+        }
     }
 }
+
+
